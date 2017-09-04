@@ -2,13 +2,12 @@ var Hapi = require('hapi');
 var mysql= require('mysql');
 
 var connection = mysql.createConnection({
-  host     : 'YOUR_MYSQL_DATABASE_ENDPOINT',
-  user     : 'YOUR_USERNAME',
-  password : 'YOUR_PASSWORD',
+  host     : 'hapi-mysql.cvcfvhiyaqh9.us-west-2.rds.amazonaws.com',
+  user     : 'keshav',
+  password : 'keshav123',
   port     : '3306',
-  database : 'YOUR_MYSQL_DATABSE_NAME'
+  database : 'edurekadb'
 });
-
 var server = new Hapi.Server();
 server.connection({ port: process.env.PORT || 8080 });
 connection.connect();
